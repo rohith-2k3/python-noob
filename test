@@ -1,0 +1,25 @@
+# m1=[
+#     [1,2,3],
+#     [4,5,6],
+#     [7,8,9]
+# ]
+# m2=[
+#     [3,4,5],
+#     [6,7,8],
+#     [1,2,3]
+# ]
+# r1,c1=len(m1),len(m1[0])
+# r2,c2=len(m2),len(m2[0])
+# result = [[0] * c2 for i in range(r1)]
+# for i in range(len(m1)):
+#     for j in range(c2):
+#         for k in range(c1):
+#             result[i][j]+=m1[i][k]*m2[k][j]
+# print(result)
+# result = [[0] * 3 for i in range(3) ]
+# for i in result:
+#     print(i,end="\n")
+i=3
+j=2
+coef =2*(i - j) // (j)
+print(coef)
