@@ -1,25 +1,45 @@
-# m1=[
-#     [1,2,3],
-#     [4,5,6],
-#     [7,8,9]
-# ]
-# m2=[
-#     [3,4,5],
-#     [6,7,8],
-#     [1,2,3]
-# ]
-# r1,c1=len(m1),len(m1[0])
-# r2,c2=len(m2),len(m2[0])
-# result = [[0] * c2 for i in range(r1)]
-# for i in range(len(m1)):
-#     for j in range(c2):
-#         for k in range(c1):
-#             result[i][j]+=m1[i][k]*m2[k][j]
-# print(result)
-# result = [[0] * 3 for i in range(3) ]
-# for i in result:
-#     print(i,end="\n")
-i=3
-j=2
-coef =2*(i - j) // (j)
-print(coef)
+class Node:
+    def __init__(self,value):
+        self.value=value
+        self.next=None
+class LinkedList:
+    def __init__(self,value):
+        new_node=Node(value)
+        self.head=new_node
+        self.tail=new_node
+        self.length=1
+    def print_list(self):
+        temp=self.head
+        if self.length==0:
+            return None
+        while temp is not None:
+            print(temp.value)
+            temp=temp.next
+    def append(self,value):
+        new_node=Node(value)
+        if self.length==0:
+            self.head=new_node
+            self.tail=new_node
+        self.tail.next=new_node
+        self.tail=new_node
+        self.length+=1
+    
+    def kth_ele(self,value):
+        if value<1 or value>self.length:
+            return None
+        temp=self.head
+        slow=self.head
+        for _ in range(value):
+            temp=temp.next
+        while temp:
+            slow=slow.next
+            temp=temp.next
+        return slow.value
+ll=LinkedList(1)
+ll.append(2)
+ll.append(3)
+ll.append(4)
+ll.append(5)
+print(ll.kth_ele(3))
+
+
