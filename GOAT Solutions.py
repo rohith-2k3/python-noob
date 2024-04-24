@@ -1,4 +1,4 @@
-# Prime Solution where time complexity is O(√n) for less..
+# Prime Solution where time complexity is O(√n) far less than O(n)..
 # def is_prime(n):
 #     if n <= 1:
 #         return False
